@@ -1,0 +1,7 @@
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\bin\Debug\ConsoleBank.exe.config
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\bin\Debug\ConsoleBank.exe
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\bin\Debug\ConsoleBank.pdb
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\obj\Debug\ConsoleBank.csproj.AssemblyReference.cache
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\obj\Debug\ConsoleBank.csproj.CoreCompileInputs.cache
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\obj\Debug\ConsoleBank.exe
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Банковская задача\ConsoleBank\obj\Debug\ConsoleBank.pdb

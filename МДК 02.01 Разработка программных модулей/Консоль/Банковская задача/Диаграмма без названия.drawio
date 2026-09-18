@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Страница-1" id="IR8fAG09WoTNwSoEOjNP">
+    <mxGraphModel dx="1396" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-20" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-15" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="Начало" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-23" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-19" parent="1" style="html=1;strokeWidth=2;shape=manualInput;boundedLbl=1;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" value="Ввод суммы и срока" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-26" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-22" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.06;arcSize=6;" value="Получение банковского процесса" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-28" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-27" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Расчёт процентов одного дня" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-32" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-31" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Расчёт дохода" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-35" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-34" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-29" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="Сумма" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-33" edge="1" parent="1" source="vxUIX2kYryiYt1CtWqN0-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vxUIX2kYryiYt1CtWqN0-29" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Сумма = сумма + доход" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="vxUIX2kYryiYt1CtWqN0-34" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="Конец" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="830" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
