@@ -24,3 +24,5 @@ while(i < len(subjects)):
 print("Любит предметы: " + res)     #Выводим список предметов
 
 print("="*25)
+stud_profile = {"name" : name, "age" : age, "subjects" : subjects}
+print(stud_profile)
