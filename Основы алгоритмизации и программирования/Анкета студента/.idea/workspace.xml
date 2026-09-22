@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c4ff30-ee88-4e21-a3ba-1e197288381f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ПР№3 Исследование типов данных/Выбор типа данных.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ПР№3 Исследование типов данных/Изменяемость и Неизменяемость.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ПР№3 Исследование типов данных/Определение и исследование типов.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ПР№3 Исследование типов данных/Преобразование типов.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ПР№3 Исследование типов данных/Работа с коллекциями.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,18 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Anketa.executor": "Run",
-    "Python.Определение и исследование типов.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Anketa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Определение и исследование типов.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
