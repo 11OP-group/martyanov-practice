@@ -1,0 +1,7 @@
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\bin\Debug\GladiatorBattle.exe.config
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\bin\Debug\GladiatorBattle.exe
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\bin\Debug\GladiatorBattle.pdb
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\obj\Debug\GladiatorBattle.csproj.AssemblyReference.cache
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\obj\Debug\GladiatorBattle.csproj.CoreCompileInputs.cache
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\obj\Debug\GladiatorBattle.exe
+C:\Users\maste\OneDrive\Рабочий стол\Projects\МДК 02.01 Разработка программных модулей\Консоль\Гладиатор\GladiatorBattle\obj\Debug\GladiatorBattle.pdb
