@@ -28,27 +28,36 @@ namespace ConsoleBank
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            double summ, perc, dayPerc, val;
+            double summ, perc, dayPerc, itogo;
             int time;
 
-            Console.Write("Введите сумму вклада: ");  //Ввод суммы вклада
+            //Ввод суммы вклада
+            Console.Write("Введите сумму вклада: ");
             summ = Convert.ToDouble(Console.ReadLine());
             summ = Math.Round(summ, 2);     //Округляем сумму до 2-х знаков
-            Console.Write("Введите срок вклада: ");  //Ввод срока вклада
+
+            //Ввод срока вклада
+            Console.Write("Введите срок вклада: ");
             time = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine();
 
-            perc = RandomDoublePercent(new Random(), 5.25, 15.86);   // Получение ставки процента
+            // Получение ставки процента
+            perc = RandomDoublePercent(new Random(), 5.25, 15.86);
             Console.WriteLine("Годовая ставка: {0}%", perc);
-            dayPerc = Math.Round((perc / 365), 3);       // Получение % в день
+
+            // Получение % в день
+            dayPerc = Math.Round((perc / 365), 3);
             Console.WriteLine("Ставка в день: {0}%", dayPerc);
 
-            val = summ * (dayPerc * time) / 100;   // Получение суммы, которая будет добавлена к вкладу
-            val = Math.Round(val, 2);
-            Console.WriteLine("Сумма от процентов: {0}", val.ToString("C", new CultureInfo("ru-RU")));
+            // Получение суммы, которая будет добавлена к вкладу
+            itogo = summ * (dayPerc * time) / 100;
+            itogo = Math.Round(itogo, 2);
+            Console.WriteLine("Сумма от процентов: {0}", itogo.ToString("C", new CultureInfo("ru-RU")));
 
+            //Вывод итоговой суммы на вкладе
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ + val), 2).ToString("C", new CultureInfo("ru-RU")));
+            Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ + itogo), 2).ToString("C", new CultureInfo("ru-RU")));
             Console.ResetColor();
 
             Console.Write("Нажмите <Enter> для выхода...");
