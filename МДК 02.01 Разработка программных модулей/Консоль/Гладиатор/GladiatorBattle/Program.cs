@@ -25,21 +25,24 @@ namespace GladiatorBattle
         static void Main(string[] args)
         {
             double health, attack, val;
-            int armor;
+            double armor;
 
             Console.Write("Введите уровень здоровья: ");  //Ввод здоровья
             health = Convert.ToDouble(Console.ReadLine());
             health = Math.Round(health, 2);     //Округляем здоровье до 2-х знаков
             Console.Write("Введите показатель брони: ");  //Ввод брони
-            armor = Convert.ToInt32(Console.ReadLine());
+            armor = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
 
             attack = RandomDoubleArmor(new Random(), 0, armor);   // Получение показателя удара
             Console.WriteLine("Удар: {0}", attack);
 
-            val = health - attack;   // Получение здоровья после удара
+            double with_armor = attack * (armor / 100.0);   //Урон с учётом брони
+            val = health - with_armor;   // Получение здоровья после удара
             val = Math.Round(val, 2);
             Console.WriteLine("Здоровье после удара: {0}", val);
+            armor -= attack;
+            Console.WriteLine("Остаток брони: {0}", armor);
 
             Console.Write("Нажмите <Enter> для выхода...");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
