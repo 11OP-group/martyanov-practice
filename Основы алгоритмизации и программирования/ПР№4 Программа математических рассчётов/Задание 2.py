@@ -1,14 +1,15 @@
 import math
 
-x1 = float(input("Координата x1: "))
-x2 = float(input("Координата x2: "))
-y1 = float(input("Координата y1: "))
-y2 = float(input("Координата y2: "))
+def point_distance(x1, y1, x2, y2):
+    p = math.sqrt(math.pow(x[0] - x[1], 2) + math.pow(y[0] - y[1], 2))
+    return p
+
+x1, y1 = map(float, input("Координаты первой точки (x1 y1): ").split())
+x2, y2 = map(float, input("Координаты второй точки (x2 y2): ").split())
 
 x = (x1, y1)
 y = (x2, y2)
 
-p = math.sqrt(math.pow(x[0] - x[1], 2) + math.pow(y[0] - y[1], 2))
-p = round(p, 2)
+dist = point_distance(x1, y1, x2, y2)
 
-print(f"Расстояние между точками {x} и {y}: {p}")
+print(f"Расстояние между точками {x} и {y}: {dist:.2f}")
