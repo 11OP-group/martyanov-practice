@@ -11,6 +11,13 @@ namespace ConsoleBank
 {
     internal class Program
     {
+        /// <summary>
+        /// Рассчитывает проценты по вкладу
+        /// </summary>
+        /// <param name="random">Объект типа Random</param>
+        /// <param name="min">Минимальное значение</param>
+        /// <param name="max">Максимальное значение</param>
+        /// <returns>Возвращает случайное число в заданном диапазоне</returns>
         public static double RandomDoublePercent(Random random, double min, double max)
         {
             // NextDouble() возвращает значение в диапазоне [0.0, 1.0)
@@ -24,6 +31,11 @@ namespace ConsoleBank
 
             return result;
         }
+
+        /// <summary>
+        /// Точка входа
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
