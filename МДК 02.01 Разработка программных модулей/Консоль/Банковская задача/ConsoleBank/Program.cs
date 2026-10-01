@@ -43,6 +43,11 @@ namespace ConsoleBank
             double summ, perc, dayPerc, itogo;
             int time;
 
+            Console.Title = "Банковская задача";
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+
             //Ввод суммы вклада
             Console.Write("Введите сумму вклада: ");
             summ = Convert.ToDouble(Console.ReadLine());
@@ -53,6 +58,7 @@ namespace ConsoleBank
             time = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
 
             // Получение ставки процента
             perc = RandomDoublePercent(new Random(), 5.25, 15.86);
@@ -70,7 +76,8 @@ namespace ConsoleBank
             //Вывод итоговой суммы на вкладе
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ + itogo), 2).ToString("C", new CultureInfo("ru-RU")));
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
 
             Console.Write("Нажмите <Enter> для выхода...");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
