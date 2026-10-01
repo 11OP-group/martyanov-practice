@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94c4ff30-ee88-4e21-a3ba-1e197288381f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JdUrVfrHOiSI6OdGU9Ma83AWxc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.1 Калькулятор налогов.executor": "Run",
+    "Python.2 Калькулятор ИМТ.executor": "Run",
+    "Python.3 Конвертер валют.executor": "Run",
+    "Python.4 Универсальный калькулятор площади.executor": "Run",
+    "Python.5 Банкомат.executor": "Run",
+    "Python.6 Площадь треугольника по координатам.executor": "Run",
+    "Python.7 Рефакторинг.executor": "Run",
+    "Python.Anketa.executor": "Run",
+    "Python.Anketa_prosto.executor": "Run",
+    "Python.Выбор типа данных.executor": "Run",
+    "Python.Задание 1.executor": "Run",
+    "Python.Задание 2.executor": "Run",
+    "Python.Задание 3.executor": "Run",
+    "Python.Задание 4.executor": "Run",
+    "Python.Задание 5.executor": "Run",
+    "Python.Задание 6.executor": "Run",
+    "Python.Задание 7.executor": "Run",
+    "Python.Изменяемость и Неизменяемость.executor": "Run",
+    "Python.Определение и исследование типов.executor": "Run",
+    "Python.Преобразование типов.executor": "Run",
+    "Python.Работа с коллекциями.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "settings.editor.selected.configurable": "editor.preferences.completion.inline"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94c4ff30-ee88-4e21-a3ba-1e197288381f" name="Changes" comment="" />
+      <created>1789990637317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789990637317</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
