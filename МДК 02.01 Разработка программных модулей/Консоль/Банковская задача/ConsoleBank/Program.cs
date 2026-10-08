@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,11 @@ namespace ConsoleBank
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+
+            const double BANKTHREEMONTH = 11.5;
+            const double BANKHALFYEAR = 11.75;
+            const double BANKYEAR = 12.5;
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             double summ, perc, dayPerc, itogo;
@@ -48,6 +54,7 @@ namespace ConsoleBank
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
 
+        Input: {
             //Ввод суммы вклада
             Console.Write("Введите сумму вклада: ");
             summ = Convert.ToDouble(Console.ReadLine());
@@ -56,13 +63,31 @@ namespace ConsoleBank
             //Ввод срока вклада
             Console.Write("Введите срок вклада: ");
             time = Convert.ToInt32(Console.ReadLine());
+        }
+
+            switch (time)
+            {
+                case 91:
+                    perc = BANKTHREEMONTH;
+                    break;
+                case 181:
+                    perc = BANKHALFYEAR;
+                    break;
+                case 365:
+                    perc = BANKYEAR;
+                    break;
+                default:
+                    Console.WriteLine("Недопустимый срок вклада!");
+                    goto Input;
+            }
 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Ваш процент составляет {0}%", perc);
 
             // Получение ставки процента
-            perc = RandomDoublePercent(new Random(), 5.25, 15.86);
-            Console.WriteLine("Годовая ставка: {0}%", perc);
+            //perc = RandomDoublePercent(new Random(), 5.25, 15.86);
+            //Console.WriteLine("Годовая ставка: {0}%", perc);
 
             // Получение % в день
             dayPerc = Math.Round((perc / 365), 3);
