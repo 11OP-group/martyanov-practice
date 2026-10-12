@@ -12,6 +12,7 @@ output = ""
 portions_spell = ""
 summa = 0
 
+#Склоняет слово "Порция"
 match portions:
     case 1:
         portions_spell = "порция"
@@ -22,51 +23,51 @@ match portions:
 
 match product:
     case "1" | "кофе":
-        summa = PRODUCT_COSTS[0] * portions
-        output += (f"Товар: Кофе\n"
+        summa = PRODUCT_COSTS[0] * portions     #Вычисляет стоимость заказа (цена * кол-во порций)
+        output += (f"Товар: Кофе ☕\n"
                    f"Цена за порцию: {PRODUCT_COSTS[0]}руб.\n"
                    f"Количество: {portions} {portions_spell}\n"
                    f"Сумма: {summa}руб.")
     case "2" | "чай":
         summa = PRODUCT_COSTS[1] * portions
-        output += (f"Товар: Кофе\n"
+        output += (f"Товар: Чай 🫖\n"
                    f"Цена за порцию: {PRODUCT_COSTS[1]}руб.\n"
                    f"Количество: {portions} {portions_spell}\n"
                    f"Сумма: {summa}руб.")
     case "3" | "сок":
         summa = PRODUCT_COSTS[2] * portions
-        output += (f"Товар: Кофе\n"
+        output += (f"Товар: Сок 🧃\n"
                    f"Цена за порцию: {PRODUCT_COSTS[2]}руб.\n"
                    f"Количество: {portions} {portions_spell}\n"
                    f"Сумма: {summa}руб.")
     case "4" | "вода":
         summa = PRODUCT_COSTS[3] * portions
-        output += (f"Товар: Кофе\n"
+        output += (f"Товар: Вода 🍶\n"
                    f"Цена за порцию: {PRODUCT_COSTS[3]}руб.\n"
                    f"Количество: {portions} {portions_spell}\n"
                    f"Сумма: {summa}руб.")
     case "5" | "лимонад":
         summa = PRODUCT_COSTS[4] * portions
-        output += (f"Товар: Кофе\n"
+        output += (f"Товар: Лимонад 🥤\n"
                    f"Цена за порцию: {PRODUCT_COSTS[4]}руб.\n"
                    f"Количество: {portions} {portions_spell}\n"
                    f"Сумма: {summa}руб.")
     case _:
         output = "Такой позиции нет в меню!"
 
-print("=" * 34 + "\n" +
-      "‖" + " "*9 + "КВИТАНЦИЯ КАФЕ" + " "*9 + "‖" + "\n" +
-       "=" * 34)
+print("◤" + "—" * 38 + "◥" + "\n" +
+      "‖" + "🍴 КВИТАНЦИЯ КАФЕ 🍴".center(36) + "‖" + "\n" +
+       "◣" + "—" * 38 + "◢")
 
 #При наличии скидочного кода применяет скидку
 if discount != "NONE" and discount in DISCOUNTS:
     disc_summ = summa * DISCOUNTS[discount]
-    output += (f"\n" +
-               f"Скидка по коду {discount} {DISCOUNTS[discount] * 100}%   -{disc_summ}руб.")
+    output += ('\n' +
+               f"\x1B[3mСкидка по коду {discount} {DISCOUNTS[discount] * 100}%\x1B[23m   -{disc_summ}руб.")
 else:
     disc_summ = 0
 
 print(output)
-print("=" * 34 + "\n"
-      f"К ОПЛАТЕ: {summa - disc_summ}руб." + "\n" +
-      "=" * 34)
+print("◤" + "—" * 38 + "◥" + "\n" +
+      "‖" + f"К ОПЛАТЕ: {summa - disc_summ:.2f}руб.".center(39) + "‖" + "\n" +
+      "◣" + "—" * 38 + "◢")

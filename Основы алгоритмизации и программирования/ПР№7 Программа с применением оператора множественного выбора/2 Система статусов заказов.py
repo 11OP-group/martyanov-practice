@@ -5,42 +5,42 @@ est_time = ""
 recommendation = ""
 is_problem = False
 
-print("=" * 35 + "\n" +
-      "‖" + " "*10 + "СТАТУС ЗАКАЗА" + " "*10 + "‖" + "\n" +
-       "=" * 35)
+print("◤" + "—" * 37 + "◥" + "\n" +
+      "‖" + "🧺 СТАТУС ЗАКАЗА 🧺".center(35) + "‖" + "\n" +
+       "◣" + "—" * 37 + "◢")
 
 match status:
     case "pending":
-        status = "в ожидании"
+        status = "В ожидании ⌚"
         description = "Заказ находится на ожидании обработки"
         est_time = "24 часа"
         recommendation = "Отслеживайте изменения статуса"
     case "processing":
-        status = "в обработке"
-        description = "Заказ находится на обратке"
+        status = "В обработке ⚙️"
+        description = "Заказ находится на обработке"
         est_time = "12 часов"
         recommendation = "Отслеживайте изменения статуса"
     case "shipped":
-        status = "отправлен"
+        status = "Отправлен ✈️"
         description = "Заказ находится в пути"
         est_time = "2-5 дней"
         recommendation = "Следите за уведомлениями о доставке"
     case "delivered":
-        status = "доставлен"
+        status = "Доставлен ✔️"
         description = "Заказ доставлен"
         est_time = "Не требуется"
         recommendation = "Не требуется"
     case "canceled":
-        status = "отменён"
+        status = "Отменён ✖️"
         description = "Заказ отменён"
         est_time = "Не требуется"
         recommendation = "Не требуется"
     case _:
         is_problem = True
-        print("Ошибка: Неизвестный статус 'invalid_status'\n"
+        print("❌ Ошибка: Неизвестный статус 'invalid_status'\n"
               "Доступные статусы: pending, processing, shipped, delivered, canceled")
 
-if is_problem == False:
+if not is_problem:
     print(f"Статус: {status}\n"
           f"Описание: {description}\n"
           f"Примерное время: {est_time}\n"
