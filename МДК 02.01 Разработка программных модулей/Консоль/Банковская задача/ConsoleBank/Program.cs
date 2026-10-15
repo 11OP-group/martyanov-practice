@@ -19,19 +19,19 @@ namespace ConsoleBank
         /// <param name="min">Минимальное значение</param>
         /// <param name="max">Максимальное значение</param>
         /// <returns>Возвращает случайное число в заданном диапазоне</returns>
-        public static double RandomDoublePercent(Random random, double min, double max)
-        {
-            // NextDouble() возвращает значение в диапазоне [0.0, 1.0)
-            double randomValue = random.NextDouble();
+        //public static double randomdoublepercent(random random, double min, double max)
+        //{
+        //    // nextdouble() возвращает значение в диапазоне [0.0, 1.0)
+        //    double randomvalue = random.nextdouble();
 
-            // Масштабируем и сдвигаем результат в нужный диапазон
-            double range = max - min;
-            double scaledValue = randomValue * range;
-            double result = scaledValue + min;
-            result = Math.Round(result, 3);
+        //    // масштабируем и сдвигаем результат в нужный диапазон
+        //    double range = max - min;
+        //    double scaledvalue = randomvalue * range;
+        //    double result = scaledvalue + min;
+        //    result = math.round(result, 3);
 
-            return result;
-        }
+        //    return result;
+        //}
 
         /// <summary>
         /// Точка входа
@@ -54,15 +54,24 @@ namespace ConsoleBank
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
 
+        //Этап ввода данных
         Input: {
-            //Ввод суммы вклада
-            Console.Write("Введите сумму вклада: ");
-            summ = Convert.ToDouble(Console.ReadLine());
-            summ = Math.Round(summ, 2);     //Округляем сумму до 2-х знаков
+                try
+                {
+                    //Ввод суммы вклада
+                    Console.Write("Введите сумму вклада: ");
+                    summ = Convert.ToDouble(Console.ReadLine());
+                    summ = Math.Round(summ, 2);     //Округляем сумму до 2-х знаков
 
-            //Ввод срока вклада
-            Console.Write("Введите срок вклада: ");
-            time = Convert.ToInt32(Console.ReadLine());
+                    //Ввод срока вклада
+                    Console.Write("Введите срок вклада: ");
+                    time = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Введены не числа!");
+                    goto Input;     //Возврат к вводу
+                }
         }
 
             switch (time)
@@ -78,7 +87,7 @@ namespace ConsoleBank
                     break;
                 default:
                     Console.WriteLine("Недопустимый срок вклада!");
-                    goto Input;
+                    goto Input;     //Возврат к вводу
             }
 
             Console.WriteLine();
