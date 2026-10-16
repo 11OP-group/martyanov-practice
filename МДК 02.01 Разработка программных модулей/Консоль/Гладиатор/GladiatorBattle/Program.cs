@@ -36,34 +36,96 @@ namespace GladiatorBattle
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            double health, attack, aftAttHealth;
-            double armor, withArmor;
+            double health1, armor1;
+            double health2, armor2;
+            double withArmor;
+            double attack;
+            string[] input;
 
-            //Ввод здоровья
-            Console.Write("Введите уровень здоровья: ");
-            health = Convert.ToDouble(Console.ReadLine());
-            health = Math.Round(health, 2);     //Округляем здоровье до 2-х знаков
+        Input:
+            try
+            {
+                //Ввод здоровья и брони первого бойца
+                Console.Write("Введите уровень здоровья и брони первого (через пробел): ");
+                input = Console.ReadLine().Split(' ');
+                health1 = double.Parse(input[0]);
+                health1 = Math.Round(health1, 2);     //Округляем здоровье до 2-х знаков
+                armor1 = double.Parse(input[1]);
+                if (health1 < 0 || armor1 < 0)
+                {
+                    Console.WriteLine("Числа не могут быть отрицательными!");
+                    goto Input;
+                }
 
-            //Ввод брони
-            Console.Write("Введите показатель брони: ");
-            armor = Convert.ToDouble(Console.ReadLine());
+                input = Array.Empty<string>();
+
+                //Ввод здоровья и брони второго бойца
+                Console.Write("Введите уровень здоровья и брони второго (через пробел): ");
+                input = Console.ReadLine().Split(' ');
+                health2 = double.Parse(input[0]);
+                health2 = Math.Round(health2, 2);     //Округляем здоровье до 2-х знаков
+                armor2 = double.Parse(input[1]);
+                if (health2 < 0 || armor2 < 0)
+                {
+                    Console.WriteLine("Числа не могут быть отрицательными!");
+                    goto Input;
+                }
+            }
+            catch (System.FormatException)
+            {
+                Console.WriteLine("Введён не тот разделитель!");
+                goto Input;
+            }
+            catch
+            {
+                Console.WriteLine("Введены не числа!");
+                goto Input;
+            }
 
             Console.WriteLine();
 
-            // Получение показателя удара
-            attack = RandomDoubleArmor(new Random(), 0, armor);
+            // Получение показателя удара по первому бойцу
+            attack = RandomDoubleArmor(new Random(), 0, armor1);
             Console.WriteLine("Удар: {0}", attack);
 
-            withArmor = attack * (armor / 100.0);   //Урон с учётом брони
+            withArmor = attack * (armor1 / 100.0);   //Урон с учётом брони
 
-            // Получение здоровья после удара
-            aftAttHealth = health - withArmor;
-            aftAttHealth = Math.Round(aftAttHealth, 2);
-            Console.WriteLine("Здоровье после удара: {0}", aftAttHealth);
+            // Получение здоровья после удара по первому бойцу
+            health1 = health1 - withArmor;
+            health1 = Math.Round(health1, 2);
+            Console.WriteLine("Здоровье после удара у первого: {0}", health1);
 
             // Получение брони после удара
-            armor -= attack;
-            Console.WriteLine("Остаток брони: {0}", armor);
+            armor1 -= attack;
+            Console.WriteLine("Остаток брони первого: {0}", armor1);
+
+            // Получение показателя удара по второму бойцу
+            attack = RandomDoubleArmor(new Random(), 0, armor2);
+            Console.WriteLine("Удар: {0}", attack);
+
+            withArmor = attack * (armor2 / 100.0);   //Урон с учётом брони
+
+            // Получение здоровья после удара по второму бойцу
+            health2 = health2 - withArmor;
+            health2 = Math.Round(health2, 2);
+            Console.WriteLine("Здоровье после удара у второго: {0}", health2);
+
+            // Получение брони после удара
+            armor2 -= attack;
+            Console.WriteLine("Остаток брони второго: {0}", armor2);
+
+            if (health1 > health2)
+            {
+                Console.WriteLine("Первый боец более здоровый! Он победил.");
+            }
+            else if (health1 < health2)
+            {
+                Console.WriteLine("Второй боец более здоровый! Он победил.");
+            }
+            else
+            {
+                Console.WriteLine("Что-то случилось... Тут ничья!");
+            }
 
             Console.Write("Нажмите <Enter> для выхода...");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
