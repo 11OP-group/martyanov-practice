@@ -46,7 +46,7 @@ namespace ConsoleBank
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            double summ, perc, dayPerc, itogo;
+            double summ, perc, monthPerc;
             int time;
 
             Console.Title = "Банковская задача";
@@ -98,18 +98,23 @@ namespace ConsoleBank
             //perc = RandomDoublePercent(new Random(), 5.25, 15.86);
             //Console.WriteLine("Годовая ставка: {0}%", perc);
 
-            // Получение % в день
-            dayPerc = Math.Round((perc / 365), 3);
-            Console.WriteLine("Ставка в день: {0}%", dayPerc);
+            // Получение % в месяц
+            monthPerc = Math.Round((perc / 12), 3);
+            Console.WriteLine("Ставка в месяц: {0}%", monthPerc);
 
-            // Получение суммы, которая будет добавлена к вкладу
-            itogo = summ * (dayPerc * time) / 100;
-            itogo = Math.Round(itogo, 2);
-            Console.WriteLine("Сумма от процентов: {0}", itogo.ToString("C", new CultureInfo("ru-RU")));
+            double addition = 0;
+
+            for (int i = 1; i <= time / 30; i++)
+            {
+                addition = summ * (monthPerc / 100);
+                summ += addition;
+                summ = Math.Round(summ, 2);
+                Console.WriteLine("{1}) Сумма на вкладе: {0} |{2}|", summ.ToString("C", new CultureInfo("ru-RU")), i, addition.ToString("C", new CultureInfo("ru-RU")));
+            }
 
             //Вывод итоговой суммы на вкладе
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ + itogo), 2).ToString("C", new CultureInfo("ru-RU")));
+            Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ), 2).ToString("C", new CultureInfo("ru-RU")));
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
 
