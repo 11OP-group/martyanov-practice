@@ -7,38 +7,67 @@ using System.Threading.Tasks;
 
 namespace GladiatorBattle
 {
+    /// <summary>
+    /// Класс с данными бойца
+    /// </summary>
     public class Gladiator
     {
         public double health, armor;
-        public int strength;
+        public int strength, hitsDealt = 1;
         public string name;
         public bool isDead = false;
 
+        /// <summary>
+        /// Функция инициализации бойца по входным данным
+        /// </summary>
+        /// <param name="health">Здоровье бойца</param>
+        /// <param name="armor">Броня бойца</param>
+        /// <param name="name">Имя бойца</param>
         internal void createWarrior(double health, double armor, string name)
         {
             this.health = health;
             this.armor = armor;
             this.name = name;
             Random rnd = new Random();
-            this.strength = 125 + rnd.Next(-10, 20);
+            this.strength = 50 + rnd.Next(-5, 15);
         }
+
+        /// <summary>
+        /// Функция обработки входящего удара
+        /// </summary>
+        /// <param name="strength">Сила, с которой по бойцу нанесён удар</param>
+        /// <param name="damageDealer">Имя того, кто удар нанёс</param>
         internal void takeDamage(double strength, string damageDealer)
         {
             Console.WriteLine($"{damageDealer} наносит удар...");
-            double armorTookDamage = strength / 100 * this.armor;
-            if (this.armor - armorTookDamage >= 0) this.armor -= armorTookDamage;
+            double armorTookDamage = strength * 0.25;
+            if (this.armor - armorTookDamage >= 0)
+            {
+                this.armor -= armorTookDamage;
+                this.armor = Math.Round(this.armor, 1);
+            }
             else this.armor = 0;
-            if (this.health - (strength - armorTookDamage) > 0) this.health -= (strength - armorTookDamage);
+            if (this.health - (strength - this.armor - armorTookDamage) > 0)
+            {
+                this.health -= (strength - this.armor - armorTookDamage);
+                this.health = Math.Round(this.health, 1);
+            }
             else
             {
                 this.health = 0;
                 this.isDead = true;
+                Console.WriteLine($"{this.name} погиб!");
             }
         }
 
     }
     internal class Program
     {
+        /// <summary>
+        /// Функция для оформления текста в простую рамку
+        /// и вывода в консоль
+        /// </summary>
+        /// <param name="text"></param>
         static void textOutput(string text)
         {
             Console.WriteLine(new string('—', 60));
@@ -94,14 +123,9 @@ namespace GladiatorBattle
                     warrior2.createWarrior(Math.Round(double.Parse(input[0]), 2), double.Parse(input[1]), "Голиаф");
                 }
             }
-            catch (System.FormatException)
+            catch 
             {
-                Console.WriteLine("Введён не тот разделитель!");
-                goto Input;
-            }
-            catch
-            {
-                Console.WriteLine("Введены не числа!");
+                Console.WriteLine("Неправильный формат ввода!");
                 goto Input;
             }
 
@@ -112,28 +136,42 @@ namespace GladiatorBattle
 
             System.Threading.Thread.Sleep(1000);
 
-            warrior1.takeDamage(warrior2.strength, warrior2.name);
-            Console.WriteLine($"У {warrior1.name} осталось {warrior1.health}HP и {warrior1.armor} брони");
+            //Бой продолжится, пока у обоих ещё есть здоровье
+            while (warrior1.health > 0 && warrior2.health > 0) {
+                warrior1.takeDamage(warrior2.strength, warrior2.name);
+                warrior2.hitsDealt += 1;
 
-            System.Threading.Thread.Sleep(1000);
+                if (warrior1.isDead) break;
 
-            warrior2.takeDamage(warrior1.strength, warrior1.name);
-            Console.WriteLine($"У {warrior2.name} осталось {warrior2.health}HP и {warrior2.armor} брони");
+                Console.WriteLine($"У {warrior1.name}а осталось {warrior1.health}HP и {warrior1.armor} брони");
+
+                System.Threading.Thread.Sleep(1000);
+
+                warrior2.takeDamage(warrior1.strength, warrior1.name);
+                warrior1.hitsDealt += 1;
+
+                if (warrior2.isDead) break;
+
+                Console.WriteLine($"У {warrior2.name}а осталось {warrior2.health}HP и {warrior2.armor} брони");
+
+                Console.WriteLine(new string('—', 60));
+            }
 
             System.Threading.Thread.Sleep(1500);
 
             if (warrior1.health > warrior2.health)
             {
-                Console.WriteLine($"Победил {warrior1.name}!");
+                Console.WriteLine($"Победил {warrior1.name}, нанеся {warrior1.hitsDealt} ударов!");
             }
             else if (warrior1.health < warrior2.health)
             {
-                Console.WriteLine($"Победил {warrior2.name}!");
+                Console.WriteLine($"Победил {warrior2.name}, нанеся {warrior1.hitsDealt} ударов!");
             }
             else
             {
                 Console.WriteLine($"У нас ничья!");
             }
+
             Console.Write("Нажмите <Enter> для выхода...");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
         }
