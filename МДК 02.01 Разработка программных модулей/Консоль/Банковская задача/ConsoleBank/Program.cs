@@ -103,6 +103,7 @@ namespace ConsoleBank
             Console.WriteLine("Ставка в месяц: {0}%", monthPerc);
 
             double addition = 0;
+            double allAdditions = 0;
 
             for (int i = 1; i <= time / 30; i++)
             {
@@ -110,11 +111,12 @@ namespace ConsoleBank
                 summ += addition;
                 summ = Math.Round(summ, 2);
                 Console.WriteLine("{1}) Сумма на вкладе: {0} |{2}|", summ.ToString("C", new CultureInfo("ru-RU")), i, addition.ToString("C", new CultureInfo("ru-RU")));
+                allAdditions += addition;
             }
 
             //Вывод итоговой суммы на вкладе
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Итоговая сумма на вкладе: {0}", Math.Round((summ), 2).ToString("C", new CultureInfo("ru-RU")));
+            Console.WriteLine("Итоговая сумма на вкладе: {0} |{1}|", summ.ToString("C", new CultureInfo("ru-RU")), Math.Round(allAdditions, 2).ToString("C", new CultureInfo("ru-RU")));
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
 
