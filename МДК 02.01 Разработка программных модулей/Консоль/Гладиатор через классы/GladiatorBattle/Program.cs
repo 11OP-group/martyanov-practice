@@ -13,7 +13,7 @@ namespace GladiatorBattle
     public class Gladiator
     {
         public double health, armor;
-        public int strength, hitsDealt = 1;
+        public int strength, hitsDealt = 0;
         public string name;
         public bool isDead = false;
 
@@ -47,9 +47,9 @@ namespace GladiatorBattle
                 this.armor = Math.Round(this.armor, 1);
             }
             else this.armor = 0;
-            if (this.health - (strength - this.armor - armorTookDamage) > 0)
+            if (this.health - (strength - this.armor) >= 0)
             {
-                this.health -= (strength - this.armor - armorTookDamage);
+                this.health -= (strength - this.armor);
                 this.health = Math.Round(this.health, 1);
             }
             else
@@ -85,8 +85,14 @@ namespace GladiatorBattle
         static void Main(string[] args)
         {
             string[] input;
-            Gladiator warrior1 = new Gladiator();
-            Gladiator warrior2 = new Gladiator();
+            Gladiator David = new Gladiator();
+            Gladiator Goliaf = new Gladiator();
+
+            //Коды цветов
+            string reset = "\u001b[0m";
+            string red = "\u001b[31m";
+            string green = "\u001b[32m";
+            string gold = "\u001b[33m";
 
             textOutput("ВЫХОД БОЙЦОВ");
 
@@ -104,7 +110,7 @@ namespace GladiatorBattle
                 }
                 else
                 {
-                    warrior1.createWarrior(Math.Round(double.Parse(input[0]), 2), double.Parse(input[1]), "Давид");
+                    David.createWarrior(Math.Round(double.Parse(input[0]), 2), double.Parse(input[1]), "Давид");
                 }
 
                 input = Array.Empty<string>();
@@ -120,7 +126,7 @@ namespace GladiatorBattle
                 }
                 else
                 { 
-                    warrior2.createWarrior(Math.Round(double.Parse(input[0]), 2), double.Parse(input[1]), "Голиаф");
+                    Goliaf.createWarrior(Math.Round(double.Parse(input[0]), 2), double.Parse(input[1]), "Голиаф");
                 }
             }
             catch 
@@ -129,48 +135,50 @@ namespace GladiatorBattle
                 goto Input;
             }
 
-            Console.WriteLine($"Гладиатор {warrior1.name} имеет {warrior1.strength} силы...");
-            Console.WriteLine($"Гладиатор {warrior2.name} имеет {warrior2.strength} силы...");
+            Console.WriteLine($"Гладиатор {green}{David.name}{reset} имеет {David.strength} силы...");
+            Console.WriteLine($"Гладиатор {red}{Goliaf.name}{reset} имеет {Goliaf.strength} силы...");
 
             textOutput("БОЙ НАЧИНАЕТСЯ!");
 
             System.Threading.Thread.Sleep(1000);
 
             //Бой продолжится, пока у обоих ещё есть здоровье
-            while (warrior1.health > 0 && warrior2.health > 0) {
-                warrior1.takeDamage(warrior2.strength, warrior2.name);
-                warrior2.hitsDealt += 1;
+            while (David.health > 0 && Goliaf.health > 0) {
+                David.takeDamage(Goliaf.strength, Goliaf.name);
+                Goliaf.hitsDealt++;
 
-                if (warrior1.isDead) break;
+                if (David.isDead) break;
 
-                Console.WriteLine($"У {warrior1.name}а осталось {warrior1.health}HP и {warrior1.armor} брони");
+                Console.WriteLine($"У {green}{David.name}а{reset} осталось {David.health}HP и {David.armor} брони");
 
                 System.Threading.Thread.Sleep(1000);
 
-                warrior2.takeDamage(warrior1.strength, warrior1.name);
-                warrior1.hitsDealt += 1;
+                Goliaf.takeDamage(David.strength, David.name);
+                David.hitsDealt++;
 
-                if (warrior2.isDead) break;
+                if (Goliaf.isDead) break;
 
-                Console.WriteLine($"У {warrior2.name}а осталось {warrior2.health}HP и {warrior2.armor} брони");
+                Console.WriteLine($"У {red}{Goliaf.name}а{reset} осталось {Goliaf.health}HP и {Goliaf.armor} брони");
 
                 Console.WriteLine(new string('—', 60));
             }
 
             System.Threading.Thread.Sleep(1500);
 
-            if (warrior1.health > warrior2.health)
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            if (David.health > Goliaf.health)
             {
-                Console.WriteLine($"Победил {warrior1.name}, нанеся {warrior1.hitsDealt} ударов!");
+                Console.WriteLine($"Победил {David.name}, нанеся {David.hitsDealt} ударов!");
             }
-            else if (warrior1.health < warrior2.health)
+            else if (David.health < Goliaf.health)
             {
-                Console.WriteLine($"Победил {warrior2.name}, нанеся {warrior1.hitsDealt} ударов!");
+                Console.WriteLine($"Победил {Goliaf.name}, нанеся {Goliaf.hitsDealt} ударов!");
             }
             else
             {
                 Console.WriteLine($"У нас ничья!");
             }
+            Console.ResetColor();
 
             Console.Write("Нажмите <Enter> для выхода...");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
