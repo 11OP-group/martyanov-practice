@@ -1,0 +1,129 @@
+html {
+	font-family: Trebuchet MS, sans-serif;
+	color: dimgrey;
+}
+header {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	line-height: 50px;
+	background-color: lightcyan;
+}
+header * {
+	display: inline;
+	height: 50px;
+}
+header ul {
+	padding: 0;
+}
+header li {
+	margin-left: 20px;
+	justify-content: center;
+}
+body {
+	margin: 0;
+	margin-top: 50px;
+}
+section {
+	height: 100vh;
+	border: 1px solid lightgrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+section table {
+	width: 90vw;
+	border-collapse: collapse;
+	border-radius: 3px;
+	border-color: dimgrey;
+	padding: 2px;
+	align-items: center;
+	vertical-align: middle;
+}
+section table th, td{
+	border: 1px solid black;
+	padding: 8px;
+}
+section tr:nth-child(1){
+	color: black;
+	font-size: 16px;
+	background-color: lightcyan;
+}
+#first {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-image: linear-gradient(rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.55)), url(../img/background.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#about {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-image: linear-gradient(rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.55)), url(../img/about.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#service {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-image: linear-gradient(rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.55)), url(../img/service.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#contact {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-image: linear-gradient(rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.55)), url(../img/contact.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#first h1 {
+	font-size: 5em;
+}
+#first .button {
+	display: block;
+	width: 175px;
+	padding: 1em;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	text-decoration: none;
+	font-size: 1.5em;
+	border: 6px solid dimgrey;
+	border-radius: 30px;
+	background-color: lightcyan;
+}
+footer {
+	height: 10vh;
+	text-align: center;
+	padding: 10px;
+}
