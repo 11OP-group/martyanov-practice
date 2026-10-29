@@ -19,7 +19,7 @@ while number > 0:
     if x > 5:
         sum_more_than_five += x
     if x > 7:
-        mult_more_than_seven *= 7
+        mult_more_than_seven *= x
     if x == 0 or x == 5:
         zero_or_five += 1
     number //= 10
