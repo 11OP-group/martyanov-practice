@@ -1,0 +1,10 @@
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\bin\Debug\bankWinForms.exe.config
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\bin\Debug\bankWinForms.exe
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\bin\Debug\bankWinForms.pdb
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.csproj.AssemblyReference.cache
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.Form1.resources
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.Properties.Resources.resources
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.csproj.GenerateResource.cache
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.csproj.CoreCompileInputs.cache
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.exe
+D:\Desktop\Projects\МДК 02.01 Разработка программных модулей\Графика\bankWinForms\obj\Debug\bankWinForms.pdb
